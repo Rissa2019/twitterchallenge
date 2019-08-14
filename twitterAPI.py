@@ -17,7 +17,7 @@ max_tweets = 1000000
 celebrities = ["@katyperry", "@justinbieber", "@BarackObama", "@rihanna", "@taylorswift13", "@ladygaga", "@TheEllenShow", "@cristiano", "@timberlake", "@ArianaGrande"]
 
 #please amend the start date to April 
-start_date = datetime.date(2019, 8, 14)
+start_date = datetime(2019-08-14 17:00:00)
 def get_cele_tweeted_by_count(query):
     searched_tweets = []
     last_id = -1
