@@ -11,13 +11,13 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-#get query for the celebrity who has been the most & its most tweeted author
-
+#Set Parameters
 max_tweets = 1000000
 celebrities = ["@katyperry", "@justinbieber", "@BarackObama", "@rihanna", "@taylorswift13", "@ladygaga", "@TheEllenShow", "@cristiano", "@timberlake", "@ArianaGrande"]
+#set start date as current date 
+start_date = datetime.date(2019, 8, 14)
 
-#please amend the start date to April 
-start_date = datetime(2019-08-14 17:00:00)
+#query to get most tweeted celebrity and its most tweeted author
 def get_cele_tweeted_by_count(query):
     searched_tweets = []
     last_id = -1
@@ -41,7 +41,7 @@ def get_cele_tweeted_by_count(query):
                break
             last_id = new_tweets[-1].id
         except tweepy.TweepError as e:
-            # depending on TweepError.code, one may want to retry or wait 15 mins
+            # depending on TweepError.code, one may want to retry or wait
             # to keep things simple, we will give up on an error
             print e
             break
